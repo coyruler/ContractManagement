@@ -12,7 +12,7 @@ namespace ContractManagement
 {
 	public partial class EditContractsForm : Form
 	{
-		public EditContractsForm()
+		public EditContractsForm(int id)
 		{
 			InitializeComponent();
 		}

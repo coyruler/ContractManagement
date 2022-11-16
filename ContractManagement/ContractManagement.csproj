@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ispan.Utility">
-      <HintPath>..\..\..\20221110\Ispan.Utility\bin\Debug\Ispan.Utility.dll</HintPath>
+      <HintPath>D:\Tony\Code\ispan\C#\20221115_dll改NInt\Ispan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -85,6 +85,8 @@
     </Compile>
     <Compile Include="Infra\ValidationHelper.cs" />
     <Compile Include="Models\Services\UserService.cs" />
+    <Compile Include="Models\ViewModels\ClientIndexVM.cs" />
+    <Compile Include="Models\ViewModels\ContractIndexVM.cs" />
     <Compile Include="Models\ViewModels\LoginVM.cs" />
     <Compile Include="Models\ViewModels\UsersIndexVM.cs" />
     <Compile Include="Program.cs" />
@@ -95,6 +97,9 @@
     <Compile Include="UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ContractsForm.resx">
+      <DependentUpon>ContractsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +119,8 @@
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.ClientIndexVM.datasource" />
+    <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.ContractIndexVM.datasource" />
     <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.UserIndexVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
