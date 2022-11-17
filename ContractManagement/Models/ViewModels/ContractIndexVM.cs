@@ -14,7 +14,7 @@ namespace ContractManagement.Models.ViewModels
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string NameOfCompany { get; set; }
-        public string GUInumber { get; set; }
+        public int ClientId { get; set; }
     }
     public class ContractVM
     {
@@ -26,7 +26,7 @@ namespace ContractManagement.Models.ViewModels
         public DateTime SignDate { get; set; }
         public string FileName { get; set; }
         public int ClientId { get; set; }
-
+        public string ContractNote { get; set; }
     }
 
 }

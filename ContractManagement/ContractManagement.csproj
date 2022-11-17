@@ -84,6 +84,8 @@
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Infra\ValidationHelper.cs" />
+    <Compile Include="Models\Services\ClientService.cs" />
+    <Compile Include="Models\Services\CoontractService.cs" />
     <Compile Include="Models\Services\UserService.cs" />
     <Compile Include="Models\ViewModels\ClientIndexVM.cs" />
     <Compile Include="Models\ViewModels\ContractIndexVM.cs" />
@@ -100,8 +102,14 @@
     <EmbeddedResource Include="ContractsForm.resx">
       <DependentUpon>ContractsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateContractsForm.resx">
+      <DependentUpon>CreateContractsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditContractsForm.resx">
+      <DependentUpon>EditContractsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
@@ -137,6 +145,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Infra\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

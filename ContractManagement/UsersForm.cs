@@ -42,21 +42,22 @@ namespace ContractManagement
 			}
 		}
 
-		private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+
+		private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
 		{
-			int rowIndx = e.RowIndex;
+            int rowIndx = e.RowIndex;
 
-			if (rowIndx < 0) return;
+            if (rowIndx < 0) return;
 
-			UserIndexVM row = this.users[rowIndx];
+            UserIndexVM row = this.users[rowIndx];
 
-			int id = row.Id;
-			var frm = new EditUserForm(id);
+            int id = row.Id;
+            var frm = new EditUserForm(id);
 
-			if (frm.ShowDialog() == DialogResult.OK)
-			{
-				DisplayUsers();
-			}
-		}
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                DisplayUsers();
+            }
+        }
 	}
 }

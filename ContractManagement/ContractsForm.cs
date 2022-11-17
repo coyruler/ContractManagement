@@ -27,12 +27,12 @@ namespace ContractManagement
             clientIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             var sql = "SELECT * FROM Contracts INNER JOIN Clients ON Contracts.ClientId = Clients.CLId Order BY Contracts.Id";
             var dbHelper = new SqlDbHelper("default");
-            List<ClientIndexVM> categories = dbHelper.Select(sql, null)
+            List<ClientIndexVM> nameOfCompany = dbHelper.Select(sql, null)
                 .AsEnumerable()
                 .Select(row => ToIndexVM(row))
                 .Prepend(new ClientIndexVM { CLId = 0,NameOfCompany= String.Empty })
                 .ToList();
-            this.clientIdComboBox.DataSource = categories;
+            this.clientIdComboBox.DataSource = nameOfCompany;
         }
         private ClientIndexVM ToIndexVM(DataRow row)
         {
@@ -79,7 +79,6 @@ ON ct.ClientId = c.CLId";
                 Id = row.Field<int>("Id"),
                 ContractTitle = row.Field<string>("ContractTitle"),
                 NameOfCompany = row.Field<string>("NameOfCompany"),
-                GUInumber = row.Field<string>("GUInumber"),
                 Amount = row.Field<int>("Amount"),
                 StartDate = row.Field<DateTime>("StartDate"),
                 EndDate = row.Field<DateTime>("EndDate"),

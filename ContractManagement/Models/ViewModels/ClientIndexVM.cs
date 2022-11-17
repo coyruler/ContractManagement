@@ -10,6 +10,7 @@ namespace ContractManagement.Models.ViewModels
     {
         public int CLId { get; set; }
         public string NameOfCompany { get; set; }
+        public string GUInumber { get; set; }
     }
     public class ClientVM
     {

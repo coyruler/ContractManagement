@@ -31,22 +31,17 @@
             this.components = new System.ComponentModel.Container();
             this.searchButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.addNewButton = new System.Windows.Forms.Button();
+            this.clientIdComboBox = new System.Windows.Forms.ComboBox();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contractTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameOfCompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gUInumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contractIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addNewButton = new System.Windows.Forms.Button();
-            this.clientIdComboBox = new System.Windows.Forms.ComboBox();
-            this.clientIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contractIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractIndexVMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientIndexVMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientIndexVMBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractIndexVMBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchButton
@@ -71,9 +66,8 @@
             this.amountDataGridViewTextBoxColumn,
             this.startDateDataGridViewTextBoxColumn,
             this.endDateDataGridViewTextBoxColumn,
-            this.nameOfCompanyDataGridViewTextBoxColumn,
-            this.gUInumberDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.contractIndexVMBindingSource;
+            this.nameOfCompanyDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.contractIndexVMBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(14, 152);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -82,10 +76,31 @@
             this.dataGridView1.TabIndex = 9;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
+            // addNewButton
+            // 
+            this.addNewButton.Location = new System.Drawing.Point(397, 42);
+            this.addNewButton.Name = "addNewButton";
+            this.addNewButton.Size = new System.Drawing.Size(96, 34);
+            this.addNewButton.TabIndex = 10;
+            this.addNewButton.Text = "新增";
+            this.addNewButton.UseVisualStyleBackColor = true;
+            this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
+            // 
+            // clientIdComboBox
+            // 
+            this.clientIdComboBox.DataSource = this.contractIndexVMBindingSource1;
+            this.clientIdComboBox.DisplayMember = "NameOfCompany";
+            this.clientIdComboBox.FormattingEnabled = true;
+            this.clientIdComboBox.Location = new System.Drawing.Point(14, 50);
+            this.clientIdComboBox.Name = "clientIdComboBox";
+            this.clientIdComboBox.Size = new System.Drawing.Size(140, 20);
+            this.clientIdComboBox.TabIndex = 11;
+            this.clientIdComboBox.ValueMember = "Id";
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "合約編號";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -109,6 +124,7 @@
             this.startDateDataGridViewTextBoxColumn.HeaderText = "合約始日";
             this.startDateDataGridViewTextBoxColumn.Name = "startDateDataGridViewTextBoxColumn";
             this.startDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.startDateDataGridViewTextBoxColumn.Width = 130;
             // 
             // endDateDataGridViewTextBoxColumn
             // 
@@ -116,6 +132,7 @@
             this.endDateDataGridViewTextBoxColumn.HeaderText = "合約訖日";
             this.endDateDataGridViewTextBoxColumn.Name = "endDateDataGridViewTextBoxColumn";
             this.endDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.endDateDataGridViewTextBoxColumn.Width = 130;
             // 
             // nameOfCompanyDataGridViewTextBoxColumn
             // 
@@ -123,46 +140,11 @@
             this.nameOfCompanyDataGridViewTextBoxColumn.HeaderText = "締約對象";
             this.nameOfCompanyDataGridViewTextBoxColumn.Name = "nameOfCompanyDataGridViewTextBoxColumn";
             this.nameOfCompanyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameOfCompanyDataGridViewTextBoxColumn.Width = 200;
             // 
-            // gUInumberDataGridViewTextBoxColumn
+            // contractIndexVMBindingSource1
             // 
-            this.gUInumberDataGridViewTextBoxColumn.DataPropertyName = "GUInumber";
-            this.gUInumberDataGridViewTextBoxColumn.HeaderText = "統一編號";
-            this.gUInumberDataGridViewTextBoxColumn.Name = "gUInumberDataGridViewTextBoxColumn";
-            this.gUInumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // contractIndexVMBindingSource
-            // 
-            this.contractIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ContractIndexVM);
-            // 
-            // addNewButton
-            // 
-            this.addNewButton.Location = new System.Drawing.Point(397, 42);
-            this.addNewButton.Name = "addNewButton";
-            this.addNewButton.Size = new System.Drawing.Size(96, 34);
-            this.addNewButton.TabIndex = 10;
-            this.addNewButton.Text = "新增";
-            this.addNewButton.UseVisualStyleBackColor = true;
-            this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
-            // 
-            // clientIdComboBox
-            // 
-            this.clientIdComboBox.DataSource = this.clientIndexVMBindingSource;
-            this.clientIdComboBox.DisplayMember = "NameOfCompany";
-            this.clientIdComboBox.FormattingEnabled = true;
-            this.clientIdComboBox.Location = new System.Drawing.Point(14, 50);
-            this.clientIdComboBox.Name = "clientIdComboBox";
-            this.clientIdComboBox.Size = new System.Drawing.Size(140, 20);
-            this.clientIdComboBox.TabIndex = 11;
-            this.clientIdComboBox.ValueMember = "Id";
-            // 
-            // clientIndexVMBindingSource
-            // 
-            this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexVM);
-            // 
-            // clientIndexVMBindingSource1
-            // 
-            this.clientIndexVMBindingSource1.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexVM);
+            this.contractIndexVMBindingSource1.DataSource = typeof(ContractManagement.Models.ViewModels.ContractIndexVM);
             // 
             // ContractsForm
             // 
@@ -176,9 +158,7 @@
             this.Name = "ContractsForm";
             this.Text = "搜尋合約";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractIndexVMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientIndexVMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientIndexVMBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractIndexVMBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
 		}
@@ -189,15 +169,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button addNewButton;
         private System.Windows.Forms.ComboBox clientIdComboBox;
-        private System.Windows.Forms.BindingSource clientIndexVMBindingSource;
-        private System.Windows.Forms.BindingSource contractIndexVMBindingSource;
-        private System.Windows.Forms.BindingSource clientIndexVMBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gUInumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource contractIndexVMBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contractTitleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn startDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn endDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameOfCompanyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gUInumberDataGridViewTextBoxColumn;
     }
 }
