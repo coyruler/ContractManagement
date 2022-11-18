@@ -47,7 +47,8 @@
 			// 
 			// deleteButton
 			// 
-			this.deleteButton.Location = new System.Drawing.Point(196, 173);
+			this.deleteButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.deleteButton.Location = new System.Drawing.Point(196, 204);
 			this.deleteButton.Name = "deleteButton";
 			this.deleteButton.Size = new System.Drawing.Size(97, 36);
 			this.deleteButton.TabIndex = 16;
@@ -57,23 +58,25 @@
 			// 
 			// passwordTextBox
 			// 
-			this.passwordTextBox.Location = new System.Drawing.Point(73, 85);
+			this.passwordTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.passwordTextBox.Location = new System.Drawing.Point(73, 82);
 			this.passwordTextBox.Name = "passwordTextBox";
-			this.passwordTextBox.Size = new System.Drawing.Size(220, 22);
+			this.passwordTextBox.Size = new System.Drawing.Size(220, 29);
 			this.passwordTextBox.TabIndex = 13;
 			// 
 			// phoneTextBox
 			// 
-			this.phoneTextBox.Location = new System.Drawing.Point(73, 145);
+			this.phoneTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.phoneTextBox.Location = new System.Drawing.Point(73, 152);
 			this.phoneTextBox.Name = "phoneTextBox";
-			this.phoneTextBox.Size = new System.Drawing.Size(220, 22);
+			this.phoneTextBox.Size = new System.Drawing.Size(220, 29);
 			this.phoneTextBox.TabIndex = 15;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.label1.Location = new System.Drawing.Point(22, 25);
+			this.label1.Location = new System.Drawing.Point(22, 18);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(45, 20);
 			this.label1.TabIndex = 6;
@@ -81,16 +84,17 @@
 			// 
 			// emailTextBox
 			// 
-			this.emailTextBox.Location = new System.Drawing.Point(73, 115);
+			this.emailTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.emailTextBox.Location = new System.Drawing.Point(73, 117);
 			this.emailTextBox.Name = "emailTextBox";
-			this.emailTextBox.Size = new System.Drawing.Size(220, 22);
+			this.emailTextBox.Size = new System.Drawing.Size(220, 29);
 			this.emailTextBox.TabIndex = 14;
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.label2.Location = new System.Drawing.Point(22, 55);
+			this.label2.Location = new System.Drawing.Point(22, 50);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(45, 20);
 			this.label2.TabIndex = 7;
@@ -108,16 +112,17 @@
 			// 
 			// accountTextBox
 			// 
-			this.accountTextBox.Location = new System.Drawing.Point(73, 55);
+			this.accountTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.accountTextBox.Location = new System.Drawing.Point(73, 47);
 			this.accountTextBox.Name = "accountTextBox";
-			this.accountTextBox.Size = new System.Drawing.Size(220, 22);
+			this.accountTextBox.Size = new System.Drawing.Size(220, 29);
 			this.accountTextBox.TabIndex = 12;
 			// 
 			// label4
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.label4.Location = new System.Drawing.Point(22, 115);
+			this.label4.Location = new System.Drawing.Point(22, 120);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(45, 20);
 			this.label4.TabIndex = 9;
@@ -125,16 +130,17 @@
 			// 
 			// nameTextBox
 			// 
-			this.nameTextBox.Location = new System.Drawing.Point(73, 25);
+			this.nameTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.nameTextBox.Location = new System.Drawing.Point(73, 12);
 			this.nameTextBox.Name = "nameTextBox";
-			this.nameTextBox.Size = new System.Drawing.Size(220, 22);
+			this.nameTextBox.Size = new System.Drawing.Size(220, 29);
 			this.nameTextBox.TabIndex = 10;
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.label5.Location = new System.Drawing.Point(22, 145);
+			this.label5.Location = new System.Drawing.Point(22, 155);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(45, 20);
 			this.label5.TabIndex = 11;
@@ -142,7 +148,8 @@
 			// 
 			// updateButton
 			// 
-			this.updateButton.Location = new System.Drawing.Point(73, 173);
+			this.updateButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.updateButton.Location = new System.Drawing.Point(73, 204);
 			this.updateButton.Name = "updateButton";
 			this.updateButton.Size = new System.Drawing.Size(97, 36);
 			this.updateButton.TabIndex = 16;
@@ -158,7 +165,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(337, 261);
+			this.ClientSize = new System.Drawing.Size(335, 277);
 			this.Controls.Add(this.updateButton);
 			this.Controls.Add(this.deleteButton);
 			this.Controls.Add(this.passwordTextBox);

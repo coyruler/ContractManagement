@@ -11,11 +11,11 @@ namespace ContractManagement.Models.Services
 {
     internal class ClientService
     {
-        public ClientVM Get(int id)
+        public ClientVM Get(int CLId)
         {
-            string sql = "SELECT * FROM Clients WHERE Id=@Id";
+            string sql = "SELECT * FROM Clients WHERE CLId=@CLId";
             var parameters = new SqlParameterBuilder()
-                .AddInt("Id", id)
+                .AddInt("CLId", CLId)
                 .Build();
 
             DataTable data = new SqlDbHelper("default").Select(sql, parameters);
@@ -27,16 +27,65 @@ namespace ContractManagement.Models.Services
 
             return ToClientVM(data.Rows[0]);
         }
-        private ClientVM ToClientVM(DataRow row)
+		public IEnumerable<ClientIndexVM> GetAll()
+		{
+			string sql = @"SELECT * FROM Clients ORDER BY CLId ";
+
+			var dbHelper = new SqlDbHelper("default");
+			return dbHelper.Select(sql, null)
+				.AsEnumerable()
+				.Select(row => ParseToIndexVM(row));
+		}
+		private ClientIndexVM ParseToIndexVM(DataRow row)
+		{
+			return new ClientIndexVM
+			{
+				CLId = row.Field<int>("CLId"),
+				NameOfCompany = row.Field<string>("NameOfCompany"),
+				LocationOfCompany = row.Field<string>("LocationOfCompany"),
+				NameOfRepresentative = row.Field<string>("NameOfRepresentative"),
+				GUInumber = row.Field<string>("GUInumber")
+			};
+		}
+		private ClientVM ToClientVM(DataRow row)
         {
             return new ClientVM
             {
-                Id = row.Field<int>("Id"),
+				CLId = row.Field<int>("CLId"),
                 NameOfCompany = row.Field<string>("NameOfCompany"),
                 GUInumber = row.Field<string>("GUInumber"),
                 LocationOfCompany = row.Field<string>("LocationOfCompany"),
                 NameOfRepresentative = row.Field<string>("NameOfRepresentative"),
             };
         }
-    }
+		internal void Update(ClientVM model)
+		{
+			string sql = @"UPDATE Clients
+			SET NameOfCompany=@NameOfCompany, GUInumber=@GUInumber, LocationOfCompany=@LocationOfCompany, NameOfRepresentative=@NameOfRepresentative
+			WHERE CLId=@CLId";
+
+			var parameters = new SqlParameterBuilder()
+				.AddInt("CLId", model.CLId)
+				.AddNVarchar("NameOfCompany", 50, model.NameOfCompany)
+				.AddNVarchar("GUInumber", 10, model.GUInumber)
+				.AddNVarchar("LocationOfCompany", 50, model.LocationOfCompany)
+				.AddNVarchar("NameOfRepresentative", 50, model.NameOfRepresentative)
+				.Build();
+
+			new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
+
+		}
+
+		internal void Delete(int CLId)
+		{
+			string sql = @"DELETE FROM Clients WHERE CLId=@CLId";
+
+			var parameters = new SqlParameterBuilder()
+				.AddInt("CLId", CLId)
+				.Build();
+
+			new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
+
+		}
+	}
 }

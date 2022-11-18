@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,7 +26,9 @@ namespace ContractManagement.Models.ViewModels
         public DateTime EndDate { get; set; }
         public DateTime SignDate { get; set; }
         public string FileName { get; set; }
-        public int ClientId { get; set; }
+
+		[Required(ErrorMessage = "締約對象必填")]
+		public int ClientId { get; set; }
         public string ContractNote { get; set; }
     }
 

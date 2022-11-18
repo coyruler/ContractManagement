@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ispan.Utility">
-      <HintPath>D:\Tony\Code\ispan\C#\20221115_dll改NInt\Ispan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
+      <HintPath>..\..\..\20221110\Ispan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -53,17 +53,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContractsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ContractsForm.Designer.cs">
       <DependentUpon>ContractsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateContractsForm.cs">
+    <Compile Include="CreateClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateContractsForm.Designer.cs">
-      <DependentUpon>CreateContractsForm.cs</DependentUpon>
+    <Compile Include="CreateClientForm.Designer.cs">
+      <DependentUpon>CreateClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateContractForm.Designer.cs">
+      <DependentUpon>CreateContractForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateUserForm.cs">
       <SubType>Form</SubType>
@@ -71,11 +83,17 @@
     <Compile Include="CreateUserForm.Designer.cs">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditContractsForm.cs">
+    <Compile Include="EditClientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditContractsForm.Designer.cs">
-      <DependentUpon>EditContractsForm.cs</DependentUpon>
+    <Compile Include="EditClientForm.Designer.cs">
+      <DependentUpon>EditClientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditContractForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditContractForm.Designer.cs">
+      <DependentUpon>EditContractForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditUserForm.cs">
       <SubType>Form</SubType>
@@ -99,17 +117,23 @@
     <Compile Include="UsersForm.Designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContractsForm.resx">
       <DependentUpon>ContractsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateContractsForm.resx">
-      <DependentUpon>CreateContractsForm.cs</DependentUpon>
+    <EmbeddedResource Include="CreateContractForm.resx">
+      <DependentUpon>CreateContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditContractsForm.resx">
-      <DependentUpon>EditContractsForm.cs</DependentUpon>
+    <EmbeddedResource Include="EditClientForm.resx">
+      <DependentUpon>EditClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditContractForm.resx">
+      <DependentUpon>EditContractForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>

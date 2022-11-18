@@ -95,12 +95,13 @@ VALUES
 
 
             string sql = @"UPDATE Contracts
-			SET ContractTitle=@ContractTitle, FileName=@FileName, StartDate=@StartDate, StartDate=@StartDate, EndDate=@EndDate
+			SET ContractTitle=@ContractTitle, FileName=@FileName, StartDate=@StartDate, EndDate=@EndDate
 , SignDate=@SignDate, Amount=@Amount, ContractNote=@ContractNote, ClientId=@ClientId 
 			WHERE Id=@Id";
 
             var parameters = new SqlParameterBuilder()
-                .AddNVarchar("ContractTitle", 50, model.ContractTitle)
+				.AddInt("Id", model.Id)
+				.AddNVarchar("ContractTitle", 50, model.ContractTitle)
                 .AddNVarchar("ContractNote", 300, model.ContractNote)
                 .AddNVarchar("FileName", 50, model.FileName)
                 .AddInt("Amount", model.Amount)

@@ -16,7 +16,7 @@ namespace ContractManagement
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new ContractsForm());
+			Application.Run(new ClientsForm());
 		}
 	}
 }

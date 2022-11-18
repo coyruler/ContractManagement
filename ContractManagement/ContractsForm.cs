@@ -25,7 +25,7 @@ namespace ContractManagement
         public void InitForm()
         {
             clientIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            var sql = "SELECT * FROM Contracts INNER JOIN Clients ON Contracts.ClientId = Clients.CLId Order BY Contracts.Id";
+            var sql = "SELECT * FROM Clients ";
             var dbHelper = new SqlDbHelper("default");
             List<ClientIndexVM> nameOfCompany = dbHelper.Select(sql, null)
                 .AsEnumerable()
@@ -91,7 +91,7 @@ ON ct.ClientId = c.CLId";
 
         private void addNewButton_Click(object sender, EventArgs e)
         {
-            var frm = new CreateContractsForm();
+            var frm = new CreateContractForm();
             DialogResult result = frm.ShowDialog();
             if (result == DialogResult.OK)
             {
@@ -106,7 +106,7 @@ ON ct.ClientId = c.CLId";
             ContractIndexVM row = this.products[rowIndx];
             int id = row.Id;
 
-            var frm = new EditContractsForm(id);
+            var frm = new EditContractForm(id);
 
             if (frm.ShowDialog() == DialogResult.OK)
             {
