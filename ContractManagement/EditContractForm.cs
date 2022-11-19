@@ -27,7 +27,7 @@ namespace ContractManagement
 		public void InitForm()
 		{
 			nameOfCompanyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-			var sql = "SELECT * FROM Clients ";
+			var sql = "SELECT * FROM Clients";
 			var dbHelper = new SqlDbHelper("default");
 			List<ClientIndexVM> nameOfCompany = dbHelper.Select(sql, null)
 				.AsEnumerable()
@@ -59,8 +59,7 @@ namespace ContractManagement
             endDateDateTimePicker.Value = model.EndDate;
             signDateDateTimePicker.Value = model.SignDate;
 			fileTextBox.Text = model.FileName;
-			nameOfCompanyComboBox.SelectedValue  = model.ClientId;
-
+			nameOfCompanyComboBox.SelectedValue = model.ClientId;
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace ContractManagement
             string file = fileTextBox.Text;
 			object clientId = nameOfCompanyComboBox.SelectedValue;
 
-            if (Convert.ToDateTime(endDate)< Convert.ToDateTime(startDate))
+            if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
 			{
                 MessageBox.Show("合約始日必須早於合約迄日");
                 return;
@@ -98,10 +97,10 @@ namespace ContractManagement
                 {"Amount", amountTextBox},
                 {"ContractNote", contractNoteTextBox},
                 {"SignDate", startDateDateTimePicker},
-                {"StartDate",startDateDateTimePicker},
-                {"EndDate",endDateDateTimePicker},
-                {"Filename",fileTextBox },
-				{"ClientId",nameOfCompanyComboBox }
+                {"StartDate", startDateDateTimePicker},
+                {"EndDate", endDateDateTimePicker},
+                {"Filename", fileTextBox},
+				{"ClientId", nameOfCompanyComboBox},
 			};
 
             bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
@@ -123,8 +122,8 @@ namespace ContractManagement
         private void deleteButton_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("您真的要刪除嗎?", "刪除記錄",
-MessageBoxButtons.YesNo,
-MessageBoxIcon.Question) != DialogResult.Yes)
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question) != DialogResult.Yes)
             {
                 return;
             }
