@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ispan.Utility">
-      <HintPath>..\..\..\20221110\Ispan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
+    <Reference Include="ISpan.Utility">
+      <HintPath>..\..\..\..\c#\20221115_dll改NInt_19改S\Ispan.Utility\bin\Debug\ISpan.Utility.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -59,6 +59,12 @@
     <Compile Include="ClientsForm.Designer.cs">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ContractSamplesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ContractSamplesForm.Designer.cs">
+      <DependentUpon>ContractSamplesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContractsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     </Compile>
     <Compile Include="CreateContractForm.Designer.cs">
       <DependentUpon>CreateContractForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateContractSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateContractSampleForm.Designer.cs">
+      <DependentUpon>CreateContractSampleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CreateUserForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +107,12 @@
     <Compile Include="EditContractForm.Designer.cs">
       <DependentUpon>EditContractForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditContractSampleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditContractSampleForm.Designer.cs">
+      <DependentUpon>EditContractSampleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,11 +120,25 @@
       <DependentUpon>EditUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Infra\ValidationHelper.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Services\ClientService.cs" />
+    <Compile Include="Models\Services\ContractSampleService.cs" />
     <Compile Include="Models\Services\CoontractService.cs" />
     <Compile Include="Models\Services\UserService.cs" />
     <Compile Include="Models\ViewModels\ClientIndexVM.cs" />
     <Compile Include="Models\ViewModels\ContractIndexVM.cs" />
+    <Compile Include="Models\ViewModels\ContractSamplesVM.cs" />
     <Compile Include="Models\ViewModels\LoginVM.cs" />
     <Compile Include="Models\ViewModels\UsersIndexVM.cs" />
     <Compile Include="Program.cs" />
@@ -120,11 +152,20 @@
     <EmbeddedResource Include="ClientsForm.resx">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ContractSamplesForm.resx">
+      <DependentUpon>ContractSamplesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContractsForm.resx">
       <DependentUpon>ContractsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateClientForm.resx">
+      <DependentUpon>CreateClientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateContractForm.resx">
       <DependentUpon>CreateContractForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateContractSampleForm.resx">
+      <DependentUpon>CreateContractSampleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateUserForm.resx">
       <DependentUpon>CreateUserForm.cs</DependentUpon>
@@ -135,8 +176,17 @@
     <EmbeddedResource Include="EditContractForm.resx">
       <DependentUpon>EditContractForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditContractSampleForm.resx">
+      <DependentUpon>EditContractSampleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUserForm.resx">
       <DependentUpon>EditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,6 +203,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.ClientIndexVM.datasource" />
     <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.ContractIndexVM.datasource" />
+    <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.ContractSampleIndexVM.datasource" />
     <None Include="Properties\DataSources\ContractManagement.Models.ViewModels.UserIndexVM.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

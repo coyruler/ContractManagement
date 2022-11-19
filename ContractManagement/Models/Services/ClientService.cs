@@ -60,7 +60,10 @@ namespace ContractManagement.Models.Services
         }
 		internal void Update(ClientVM model)
 		{
-			string sql = @"UPDATE Clients
+            bool isExists = GUInumberExists(model);
+            if (isExists) throw new Exception("統一編號已存在");
+
+            string sql = @"UPDATE Clients
 			SET NameOfCompany=@NameOfCompany, GUInumber=@GUInumber, LocationOfCompany=@LocationOfCompany, NameOfRepresentative=@NameOfRepresentative
 			WHERE CLId=@CLId";
 
@@ -87,5 +90,52 @@ namespace ContractManagement.Models.Services
 			new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
 
 		}
-	}
+
+        public void Create(ClientVM model)
+        {
+            bool isExists = GUInumberExists(model.GUInumber);
+            if (isExists) throw new Exception("帳號已存在");
+
+            string sql = @"INSERT INTO Clients
+(NameOfCompany,LocationOfCompany, NameOfRepresentative, GUInumber)
+VALUES
+(@NameOfCompany,@LocationOfCompany, @NameOfRepresentative, @GUInumber)";
+
+            var parameters = new SqlParameterBuilder()
+                .AddNVarchar("NameOfCompany", 50, model.NameOfCompany)
+                .AddNVarchar("LocationOfCompany", 50, model.LocationOfCompany)
+                .AddNVarchar("NameOfRepresentative", 50, model.NameOfRepresentative)
+                .AddNVarchar("GUInumber", 10, model.GUInumber)
+                .Build();
+
+            new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
+
+        }
+
+        private bool GUInumberExists(string account)
+        {
+            string sql = @"SELECT Count(*) as count FROM Clients WHERE GUInumber=@GUInumber";
+
+            var parameters = new SqlParameterBuilder()
+                .AddNVarchar("GUInumber", 50, account)
+                .Build();
+
+            DataTable data = new SqlDbHelper("default").Select(sql, parameters);
+            return data.Rows[0].Field<int>("count") > 0;
+        }
+
+        private bool GUInumberExists(ClientVM model)
+        {
+            string sql = @"SELECT Count(*) as count FROM Clients WHERE GUInumber=@GUInumber AND CLId!=@CLId";
+
+            var parameters = new SqlParameterBuilder()
+                .AddNVarchar("GUInumber", 50, model.GUInumber)
+                .AddInt("CLId", model.CLId)
+                .Build();
+
+            DataTable data = new SqlDbHelper("default").Select(sql, parameters);
+            return data.Rows[0].Field<int>("count") > 0;
+        }
+       
+    }
 }

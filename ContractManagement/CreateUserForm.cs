@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace ContractManagement
 {
@@ -42,7 +44,7 @@ namespace ContractManagement
 				{"Password", passwordTextBox},
 				{"Name", nameTextBox},
 				{"Email", emailTextBox},
-				{"Phonr",phoneTextBox},
+				{"Phone",phoneTextBox},
 			};
 
 			bool isValid = ValidationHelper.Validate(model, map, errorProvider1);

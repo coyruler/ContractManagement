@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ContractManagement.Models.ViewModels
 {
 	public class UserIndexVM
@@ -32,6 +33,6 @@ namespace ContractManagement.Models.ViewModels
 		public string Email { get; set; }
 		[Required(ErrorMessage = "手機必填")]
 		[StringLength(10, ErrorMessage = "手機長度只能十個字")]
-		public string Phone { get; set; }
+        public string Phone { get; set; }
 	}
 }
