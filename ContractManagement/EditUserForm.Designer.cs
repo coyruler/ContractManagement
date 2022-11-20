@@ -51,7 +51,7 @@
             this.deleteButton.Location = new System.Drawing.Point(196, 204);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(97, 36);
-            this.deleteButton.TabIndex = 16;
+            this.deleteButton.TabIndex = 6;
             this.deleteButton.Text = "刪除";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
@@ -62,7 +62,7 @@
             this.passwordTextBox.Location = new System.Drawing.Point(73, 82);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(220, 29);
-            this.passwordTextBox.TabIndex = 13;
+            this.passwordTextBox.TabIndex = 2;
             // 
             // phoneTextBox
             // 
@@ -70,7 +70,7 @@
             this.phoneTextBox.Location = new System.Drawing.Point(73, 152);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(220, 29);
-            this.phoneTextBox.TabIndex = 15;
+            this.phoneTextBox.TabIndex = 4;
             // 
             // label1
             // 
@@ -88,7 +88,7 @@
             this.emailTextBox.Location = new System.Drawing.Point(73, 117);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(220, 29);
-            this.emailTextBox.TabIndex = 14;
+            this.emailTextBox.TabIndex = 3;
             // 
             // label2
             // 
@@ -116,7 +116,7 @@
             this.accountTextBox.Location = new System.Drawing.Point(73, 47);
             this.accountTextBox.Name = "accountTextBox";
             this.accountTextBox.Size = new System.Drawing.Size(220, 29);
-            this.accountTextBox.TabIndex = 12;
+            this.accountTextBox.TabIndex = 1;
             // 
             // label4
             // 
@@ -134,7 +134,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(73, 12);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(220, 29);
-            this.nameTextBox.TabIndex = 10;
+            this.nameTextBox.TabIndex = 0;
             // 
             // label5
             // 
@@ -152,7 +152,7 @@
             this.updateButton.Location = new System.Drawing.Point(73, 204);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(97, 36);
-            this.updateButton.TabIndex = 16;
+            this.updateButton.TabIndex = 5;
             this.updateButton.Text = "更新";
             this.updateButton.UseVisualStyleBackColor = true;
             this.updateButton.Click += new System.EventHandler(this.updateButton_Click);

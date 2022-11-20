@@ -44,6 +44,7 @@
             this.fileNameTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fileNameTextBox.Location = new System.Drawing.Point(93, 59);
             this.fileNameTextBox.Name = "fileNameTextBox";
+            this.fileNameTextBox.ReadOnly = true;
             this.fileNameTextBox.Size = new System.Drawing.Size(292, 29);
             this.fileNameTextBox.TabIndex = 8;
             // 
@@ -53,7 +54,7 @@
             this.selectFileButton.Location = new System.Drawing.Point(427, 12);
             this.selectFileButton.Name = "selectFileButton";
             this.selectFileButton.Size = new System.Drawing.Size(109, 30);
-            this.selectFileButton.TabIndex = 9;
+            this.selectFileButton.TabIndex = 0;
             this.selectFileButton.Text = "選擇檔案";
             this.selectFileButton.UseVisualStyleBackColor = true;
             this.selectFileButton.Click += new System.EventHandler(this.selectFileButton_Click);
@@ -64,7 +65,7 @@
             this.saveButton.Location = new System.Drawing.Point(426, 62);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(109, 34);
-            this.saveButton.TabIndex = 10;
+            this.saveButton.TabIndex = 1;
             this.saveButton.Text = "新增";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -98,6 +99,7 @@
             this.fileURLTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fileURLTextBox.Location = new System.Drawing.Point(93, 13);
             this.fileURLTextBox.Name = "fileURLTextBox";
+            this.fileURLTextBox.ReadOnly = true;
             this.fileURLTextBox.Size = new System.Drawing.Size(292, 29);
             this.fileURLTextBox.TabIndex = 13;
             // 
@@ -105,7 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 191);
+            this.ClientSize = new System.Drawing.Size(558, 116);
             this.Controls.Add(this.fileURLTextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

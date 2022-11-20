@@ -85,7 +85,7 @@
             this.addNewButton.Location = new System.Drawing.Point(559, 22);
             this.addNewButton.Name = "addNewButton";
             this.addNewButton.Size = new System.Drawing.Size(96, 34);
-            this.addNewButton.TabIndex = 3;
+            this.addNewButton.TabIndex = 0;
             this.addNewButton.Text = "新增";
             this.addNewButton.UseVisualStyleBackColor = true;
             this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);

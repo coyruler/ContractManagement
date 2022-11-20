@@ -171,7 +171,7 @@
             this.saveButton.Location = new System.Drawing.Point(472, 35);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(93, 44);
-            this.saveButton.TabIndex = 9;
+            this.saveButton.TabIndex = 8;
             this.saveButton.Text = "新增";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -199,7 +199,7 @@
             this.contractNoteTextBox.Name = "contractNoteTextBox";
             this.contractNoteTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.contractNoteTextBox.Size = new System.Drawing.Size(532, 241);
-            this.contractNoteTextBox.TabIndex = 8;
+            this.contractNoteTextBox.TabIndex = 7;
             // 
             // errorProvider1
             // 
@@ -210,8 +210,9 @@
             this.fileTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fileTextBox.Location = new System.Drawing.Point(112, 278);
             this.fileTextBox.Name = "fileTextBox";
+            this.fileTextBox.ReadOnly = true;
             this.fileTextBox.Size = new System.Drawing.Size(280, 29);
-            this.fileTextBox.TabIndex = 6;
+            this.fileTextBox.TabIndex = 7;
             // 
             // selectFileButton
             // 
@@ -219,7 +220,7 @@
             this.selectFileButton.Location = new System.Drawing.Point(412, 237);
             this.selectFileButton.Name = "selectFileButton";
             this.selectFileButton.Size = new System.Drawing.Size(109, 30);
-            this.selectFileButton.TabIndex = 7;
+            this.selectFileButton.TabIndex = 6;
             this.selectFileButton.Text = "選擇檔案";
             this.selectFileButton.UseVisualStyleBackColor = true;
             this.selectFileButton.Click += new System.EventHandler(this.selectFileButton_Click);
@@ -239,8 +240,9 @@
             this.fileURLTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fileURLTextBox.Location = new System.Drawing.Point(112, 239);
             this.fileURLTextBox.Name = "fileURLTextBox";
+            this.fileURLTextBox.ReadOnly = true;
             this.fileURLTextBox.Size = new System.Drawing.Size(280, 29);
-            this.fileURLTextBox.TabIndex = 15;
+            this.fileURLTextBox.TabIndex = 6;
             // 
             // label9
             // 

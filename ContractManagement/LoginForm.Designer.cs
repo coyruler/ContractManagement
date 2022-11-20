@@ -43,7 +43,7 @@
             this.loginButton.Location = new System.Drawing.Point(180, 103);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(96, 48);
-            this.loginButton.TabIndex = 10;
+            this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
@@ -54,7 +54,7 @@
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(192, 29);
-            this.passwordTextBox.TabIndex = 9;
+            this.passwordTextBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -70,7 +70,7 @@
             this.accountTextBox.Location = new System.Drawing.Point(84, 33);
             this.accountTextBox.Name = "accountTextBox";
             this.accountTextBox.Size = new System.Drawing.Size(192, 29);
-            this.accountTextBox.TabIndex = 8;
+            this.accountTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.accountTextBox);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "LoginForm";
             this.Text = "登入";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

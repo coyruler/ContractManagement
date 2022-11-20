@@ -240,7 +240,7 @@
             this.selectFileButton.Location = new System.Drawing.Point(394, 226);
             this.selectFileButton.Name = "selectFileButton";
             this.selectFileButton.Size = new System.Drawing.Size(89, 30);
-            this.selectFileButton.TabIndex = 7;
+            this.selectFileButton.TabIndex = 6;
             this.selectFileButton.Text = "選擇檔案";
             this.selectFileButton.UseVisualStyleBackColor = true;
             this.selectFileButton.Click += new System.EventHandler(this.selectFileButton_Click);
@@ -254,6 +254,7 @@
             this.fileTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fileTextBox.Location = new System.Drawing.Point(109, 268);
             this.fileTextBox.Name = "fileTextBox";
+            this.fileTextBox.ReadOnly = true;
             this.fileTextBox.Size = new System.Drawing.Size(279, 29);
             this.fileTextBox.TabIndex = 6;
             // 
@@ -272,6 +273,7 @@
             this.fileURLTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.fileURLTextBox.Location = new System.Drawing.Point(109, 227);
             this.fileURLTextBox.Name = "fileURLTextBox";
+            this.fileURLTextBox.ReadOnly = true;
             this.fileURLTextBox.Size = new System.Drawing.Size(279, 29);
             this.fileURLTextBox.TabIndex = 15;
             // 
@@ -291,7 +293,7 @@
             this.DownloadButton.Location = new System.Drawing.Point(394, 267);
             this.DownloadButton.Name = "DownloadButton";
             this.DownloadButton.Size = new System.Drawing.Size(89, 30);
-            this.DownloadButton.TabIndex = 21;
+            this.DownloadButton.TabIndex = 7;
             this.DownloadButton.Text = "下載檔案";
             this.DownloadButton.UseVisualStyleBackColor = true;
             this.DownloadButton.Click += new System.EventHandler(this.DownloadButton_Click);
