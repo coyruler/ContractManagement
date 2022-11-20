@@ -14,10 +14,11 @@ namespace ContractManagement.Models.Services
         public void Create(ContractSampleVM model)
         {
 
-            string sql = @"INSERT INTO ContractSamples (FileName) VALUES (@FileName)";
+            string sql = @"INSERT INTO ContractSamples (SampleFileName, SampleFileURL) VALUES (@SampleFileName, @SampleFileURL)";
 
             var parameters = new SqlParameterBuilder()
-                .AddNVarchar("FileName", 200, model.FileName)
+                .AddNVarchar("SampleFileName", 200, model.SampleFileName)
+                .AddNVarchar("SampleFileURL", 200, model.SampleFileURL)
                 .Build();
 
             new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);
@@ -45,18 +46,20 @@ namespace ContractManagement.Models.Services
             return new ContractSampleVM
             {
                 Id = row.Field<int>("Id"),
-                FileName = row.Field<string>("FileName")
+                SampleFileName = row.Field<string>("SampleFileName"),
+                SampleFileURL = row.Field<string>("SampleFileURL"),
             };
         }
         internal void Update(ContractSampleVM model)
         {
 
 
-            string sql = @"UPDATE ContractSamples SET FileName=@FileName WHERE Id=@Id";
+            string sql = @"UPDATE ContractSamples SET SampleFileName=@SampleFileName, SampleFileURL=@SampleFileURL WHERE Id=@Id";
 
             var parameters = new SqlParameterBuilder()
                 .AddInt("Id", model.Id)
-                .AddNVarchar("FileName", 200, model.FileName)
+                .AddNVarchar("SampleFileName", 200, model.SampleFileName)
+                .AddNVarchar("SampleFileURL", 200, model.SampleFileURL)
                 .Build();
 
             new SqlDbHelper("default").ExecuteNonQuery(sql, parameters);

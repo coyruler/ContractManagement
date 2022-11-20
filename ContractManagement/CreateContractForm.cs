@@ -31,15 +31,15 @@ namespace ContractManagement
             nameOfCompanyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             var sql = "SELECT * FROM clients";
             var dbHelper = new SqlDbHelper("default");
-            List<ClientIndexVM> categories = dbHelper.Select(sql, null)
+            List<ClientIndexIndexVM> categories = dbHelper.Select(sql, null)
                 .AsEnumerable()
                 .Select(row => ToIndexVM(row))
                 .ToList();
             this.nameOfCompanyComboBox.DataSource = categories;
         }
-        private ClientIndexVM ToIndexVM(DataRow row)
+        private ClientIndexIndexVM ToIndexVM(DataRow row)
         {
-            return new ClientIndexVM
+            return new ClientIndexIndexVM
             {
                 CLId = row.Field<int>("CLId"),
                 NameOfCompany = row.Field<string>("NameOfCompany"),
@@ -54,7 +54,8 @@ namespace ContractManagement
             string startDate = startDateDateTimePicker.Text;
             string endDate = endDateDateTimePicker.Text;
 			string file = fileTextBox.Text;
-			object clientId = nameOfCompanyComboBox.SelectedValue;
+            string fileURL = fileURLTextBox.Text;
+            object clientId = nameOfCompanyComboBox.SelectedValue;
 
 			if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
 			{
@@ -70,8 +71,9 @@ namespace ContractManagement
                 StartDate = Convert.ToDateTime(startDate),
                 EndDate = Convert.ToDateTime(endDate),
 				ClientId = int.Parse(clientId.ToString()),
-				FileName = file
-			};
+				FileName = file,
+                FileURL = fileURL,
+            };
             Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
             {
                 {"ContractTitle", contractTitleTextBox},
@@ -105,6 +107,9 @@ namespace ContractManagement
 			OpenFileDialog file = new OpenFileDialog();
 			file.ShowDialog();
 			this.fileTextBox.Text = file.SafeFileName;
-		}
+            this.fileURLTextBox.Text = file.FileName;
+        }
+
+
     }
 }

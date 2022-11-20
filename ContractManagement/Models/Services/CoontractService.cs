@@ -25,14 +25,15 @@ namespace ContractManagement.Models.Services
         {
 
             string sql = @"INSERT INTO Contracts
-(ContractTitle,Amount, ContractNote, SignDate, StartDate, EndDate, ClientId, FileName)
+(ContractTitle,Amount, ContractNote, SignDate, StartDate, EndDate, ClientId, FileName, FileURL)
 VALUES
-(@ContractTitle,@Amount, @ContractNote, @SignDate, @StartDate, @EndDate, @ClientId, @FileName)";
+(@ContractTitle,@Amount, @ContractNote, @SignDate, @StartDate, @EndDate, @ClientId, @FileName, @FileURL)";
 
             var parameters = new SqlParameterBuilder()
                 .AddNVarchar("ContractTitle", 50, model.ContractTitle)
                 .AddNVarchar("ContractNote", 300, model.ContractNote)
-                .AddNVarchar("FileName", 50, model.FileName)
+                .AddNVarchar("FileName", 200, model.FileName)
+                .AddNVarchar("FileURL", 200, model.FileURL)
                 .AddInt("Amount", model.Amount)
                 .AddDateTime("SignDate",model.SignDate)
                 .AddDateTime("StartDate", model.StartDate)
@@ -81,6 +82,7 @@ VALUES
                 Id = row.Field<int>("Id"),
                 ContractTitle = row.Field<string>("ContractTitle"),
                 FileName = row.Field<string>("FileName"),
+                FileURL = row.Field<string>("FileURL"),
                 StartDate = row.Field<DateTime>("StartDate"),
                 EndDate = row.Field<DateTime>("EndDate"),
                 SignDate = row.Field<DateTime>("SignDate"),
@@ -96,14 +98,15 @@ VALUES
 
             string sql = @"UPDATE Contracts
 			SET ContractTitle=@ContractTitle, FileName=@FileName, StartDate=@StartDate, EndDate=@EndDate
-, SignDate=@SignDate, Amount=@Amount, ContractNote=@ContractNote, ClientId=@ClientId 
+, SignDate=@SignDate, Amount=@Amount, ContractNote=@ContractNote, ClientId=@ClientId, FileURL=@FileURL  
 			WHERE Id=@Id";
 
             var parameters = new SqlParameterBuilder()
 				.AddInt("Id", model.Id)
 				.AddNVarchar("ContractTitle", 50, model.ContractTitle)
                 .AddNVarchar("ContractNote", 300, model.ContractNote)
-                .AddNVarchar("FileName", 50, model.FileName)
+                .AddNVarchar("FileName", 200, model.FileName)
+                .AddNVarchar("FileURL", 200, model.FileURL)
                 .AddInt("Amount", model.Amount)
                 .AddDateTime("SignDate", model.SignDate)
                 .AddDateTime("StartDate", model.StartDate)

@@ -31,8 +31,9 @@ namespace ContractManagement.Models.ViewModels
         [Required(ErrorMessage = "締約日必填")]
         public DateTime SignDate { get; set; }
         public string FileName { get; set; }
+        public string FileURL { get; set; }
 
-		[Required(ErrorMessage = "締約對象必填")]
+        [Required(ErrorMessage = "締約對象必填")]
 		public int ClientId { get; set; }
         public string ContractNote { get; set; }
     }

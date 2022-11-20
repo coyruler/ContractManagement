@@ -14,7 +14,7 @@ namespace ContractManagement
 {
 	public partial class ClientsForm : Form
 	{
-		private ClientIndexVM[] clients = null;
+		private ClientIndexIndexVM[] clients = null;
 		public ClientsForm()
 		{
 			InitializeComponent();
@@ -25,7 +25,7 @@ namespace ContractManagement
 			clients = new ClientService().GetAll().ToArray();
 			BindData(clients);
 		}
-		private void BindData(ClientIndexVM[] data)
+		private void BindData(ClientIndexIndexVM[] data)
 		{
 			dataGridView1.DataSource = data;
 		}
@@ -48,7 +48,7 @@ namespace ContractManagement
 
 			if (rowIndx < 0) return;
 
-			ClientIndexVM row = this.clients[rowIndx];
+			ClientIndexIndexVM row = this.clients[rowIndx];
 
 			int clid = row.CLId;
 			var frm = new EditClientForm(clid);

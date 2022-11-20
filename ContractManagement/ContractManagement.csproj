@@ -136,9 +136,9 @@
     <Compile Include="Models\Services\ContractSampleService.cs" />
     <Compile Include="Models\Services\CoontractService.cs" />
     <Compile Include="Models\Services\UserService.cs" />
-    <Compile Include="Models\ViewModels\ClientIndexVM.cs" />
+    <Compile Include="Models\ViewModels\ClientIndexIndexVM.cs" />
     <Compile Include="Models\ViewModels\ContractIndexVM.cs" />
-    <Compile Include="Models\ViewModels\ContractSamplesVM.cs" />
+    <Compile Include="Models\ViewModels\ContractSamplesIndexVM.cs" />
     <Compile Include="Models\ViewModels\LoginVM.cs" />
     <Compile Include="Models\ViewModels\UsersIndexVM.cs" />
     <Compile Include="Program.cs" />

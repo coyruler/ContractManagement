@@ -113,7 +113,7 @@
             // 
             // clientIndexVMBindingSource
             // 
-            this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexVM);
+            this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexIndexVM);
             // 
             // addNewButton
             // 

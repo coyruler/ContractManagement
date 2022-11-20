@@ -15,6 +15,7 @@ namespace ContractManagement
 {
     public partial class CreateContractSampleForm : Form
     {
+        
         public CreateContractSampleForm()
         {
             InitializeComponent();
@@ -23,21 +24,26 @@ namespace ContractManagement
         private void selectFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
+            //file.InitialDirectory = "c:\\";
             file.ShowDialog();
-            this.fileTextBox.Text = file.SafeFileName;
+            this.fileNameTextBox.Text = file.SafeFileName;
+            this.fileURLTextBox.Text = file.FileName;
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            string fileName = fileTextBox.Text;
+            string fileName = fileNameTextBox.Text;
+            string fileURl = fileURLTextBox.Text;
 
             ContractSampleVM model = new ContractSampleVM
             {
-                FileName = fileName
+                SampleFileName = fileName,
+                SampleFileURL = fileURl,
             };
             Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
             {
-                {"Filename",fileTextBox }
+                {"Filename",fileNameTextBox},
+                {"FileURL", fileURLTextBox}
             };
 
             bool isValid = ValidationHelper.Validate(model, map, errorProvider1);

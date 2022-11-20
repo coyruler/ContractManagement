@@ -7,9 +7,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
+
 
 namespace ContractManagement
 {
@@ -29,7 +32,9 @@ namespace ContractManagement
         private void BindData(int id)
         {
             ContractSampleVM model = new ContractSampleService().Get(id);
-            fileTextBox.Text = model.FileName;
+            fileURLTextBox.Text = model.SampleFileURL;
+            fileTextBox.Text = model.SampleFileName;
+            
 
         }
 
@@ -38,19 +43,23 @@ namespace ContractManagement
             OpenFileDialog file = new OpenFileDialog();
             file.ShowDialog();
             this.fileTextBox.Text = file.SafeFileName;
+            this.fileURLTextBox.Text = file.FileName;
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
             string fileName = fileTextBox.Text;
+            string fileURl = fileURLTextBox.Text;
             ContractSampleVM model = new ContractSampleVM
             {
                 Id = id,
-                FileName = fileName
+                SampleFileName = fileName,
+                SampleFileURL = fileURl,
             };
             Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
             {
-                {"Filename",fileTextBox }
+                {"Filename", fileTextBox},
+                {"FileURL", fileURLTextBox}
             };
 
             bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
@@ -83,6 +92,20 @@ MessageBoxIcon.Question) != DialogResult.Yes)
             this.DialogResult = DialogResult.OK;
         }
 
-
+        private void DownloadButton_Click(object sender, EventArgs e)
+        {
+            WebClient webClient = new WebClient();
+            string fileName = fileTextBox.Text;
+            string fileURl = fileURLTextBox.Text;
+            try
+            {
+                webClient.DownloadFile($"{fileURl}", $@"{fileName}");
+            }
+            catch
+            {
+                MessageBox.Show("請更正檔案名稱及位置");
+            };
+            
+        }
     }
 }

@@ -10,12 +10,14 @@ namespace ContractManagement.Models.ViewModels
     internal class ContractSampleIndexVM
     {
         public int Id { get; set; }
-        public string FileName { get; set; }
+        public string SampleFileName { get; set; }
+        public string SampleFileURL { get; set; }
     }
     internal class ContractSampleVM
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "檔案名稱必填")]
-        public string FileName { get; set; }
+        public string SampleFileName { get; set; }
+        public string SampleFileURL { get; set; }
     }
 }

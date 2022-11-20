@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ContractManagement.Models.ViewModels
 {
-    public class ClientIndexVM
+    public class ClientIndexIndexVM
     {
         public int CLId { get; set; }
         public string NameOfCompany { get; set; }

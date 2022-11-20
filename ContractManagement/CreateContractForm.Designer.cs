@@ -48,6 +48,9 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.fileTextBox = new System.Windows.Forms.TextBox();
             this.selectFileButton = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.fileURLTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clientIndexVMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -106,7 +109,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.Location = new System.Drawing.Point(29, 277);
+            this.label7.Location = new System.Drawing.Point(30, 340);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 4;
@@ -187,11 +190,11 @@
             // 
             // clientIndexVMBindingSource
             // 
-            this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexVM);
+            this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexIndexVM);
             // 
             // contractNoteTextBox
             // 
-            this.contractNoteTextBox.Location = new System.Drawing.Point(33, 301);
+            this.contractNoteTextBox.Location = new System.Drawing.Point(34, 363);
             this.contractNoteTextBox.Multiline = true;
             this.contractNoteTextBox.Name = "contractNoteTextBox";
             this.contractNoteTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -205,7 +208,7 @@
             // fileTextBox
             // 
             this.fileTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.fileTextBox.Location = new System.Drawing.Point(33, 235);
+            this.fileTextBox.Location = new System.Drawing.Point(112, 278);
             this.fileTextBox.Name = "fileTextBox";
             this.fileTextBox.Size = new System.Drawing.Size(280, 29);
             this.fileTextBox.TabIndex = 6;
@@ -213,7 +216,7 @@
             // selectFileButton
             // 
             this.selectFileButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.selectFileButton.Location = new System.Drawing.Point(319, 235);
+            this.selectFileButton.Location = new System.Drawing.Point(412, 237);
             this.selectFileButton.Name = "selectFileButton";
             this.selectFileButton.Size = new System.Drawing.Size(109, 30);
             this.selectFileButton.TabIndex = 7;
@@ -221,13 +224,44 @@
             this.selectFileButton.UseVisualStyleBackColor = true;
             this.selectFileButton.Click += new System.EventHandler(this.selectFileButton_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.Location = new System.Drawing.Point(30, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "檔案位置:";
+            // 
+            // fileURLTextBox
+            // 
+            this.fileURLTextBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.fileURLTextBox.Location = new System.Drawing.Point(112, 239);
+            this.fileURLTextBox.Name = "fileURLTextBox";
+            this.fileURLTextBox.Size = new System.Drawing.Size(280, 29);
+            this.fileURLTextBox.TabIndex = 15;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label9.Location = new System.Drawing.Point(30, 281);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 20);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "檔案名稱:";
+            // 
             // CreateContractForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 566);
+            this.ClientSize = new System.Drawing.Size(682, 635);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.fileTextBox);
+            this.Controls.Add(this.fileURLTextBox);
             this.Controls.Add(this.selectFileButton);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.contractNoteTextBox);
             this.Controls.Add(this.nameOfCompanyComboBox);
             this.Controls.Add(this.saveButton);
@@ -274,5 +308,8 @@
         private System.Windows.Forms.BindingSource clientIndexVMBindingSource;
 		private System.Windows.Forms.TextBox fileTextBox;
 		private System.Windows.Forms.Button selectFileButton;
-	}
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox fileURLTextBox;
+        private System.Windows.Forms.Label label4;
+    }
 }

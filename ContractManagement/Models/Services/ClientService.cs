@@ -27,7 +27,7 @@ namespace ContractManagement.Models.Services
 
             return ToClientVM(data.Rows[0]);
         }
-		public IEnumerable<ClientIndexVM> GetAll()
+		public IEnumerable<ClientIndexIndexVM> GetAll()
 		{
 			string sql = @"SELECT * FROM Clients ORDER BY CLId ";
 
@@ -36,9 +36,9 @@ namespace ContractManagement.Models.Services
 				.AsEnumerable()
 				.Select(row => ParseToIndexVM(row));
 		}
-		private ClientIndexVM ParseToIndexVM(DataRow row)
+		private ClientIndexIndexVM ParseToIndexVM(DataRow row)
 		{
-			return new ClientIndexVM
+			return new ClientIndexIndexVM
 			{
 				CLId = row.Field<int>("CLId"),
 				NameOfCompany = row.Field<string>("NameOfCompany"),

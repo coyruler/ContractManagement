@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,15 +30,15 @@ namespace ContractManagement
 			nameOfCompanyComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 			var sql = "SELECT * FROM Clients";
 			var dbHelper = new SqlDbHelper("default");
-			List<ClientIndexVM> nameOfCompany = dbHelper.Select(sql, null)
+			List<ClientIndexIndexVM> nameOfCompany = dbHelper.Select(sql, null)
 				.AsEnumerable()
 				.Select(row => ToIndexVM(row))
 				.ToList();
 			this.nameOfCompanyComboBox.DataSource = nameOfCompany;
 		}
-		private ClientIndexVM ToIndexVM(DataRow row)
+		private ClientIndexIndexVM ToIndexVM(DataRow row)
 		{
-			return new ClientIndexVM
+			return new ClientIndexIndexVM
 			{
 				CLId = row.Field<int>("CLId"),
 				NameOfCompany = row.Field<string>("NameOfCompany"),
@@ -59,7 +60,8 @@ namespace ContractManagement
             endDateDateTimePicker.Value = model.EndDate;
             signDateDateTimePicker.Value = model.SignDate;
 			fileTextBox.Text = model.FileName;
-			nameOfCompanyComboBox.SelectedValue = model.ClientId;
+            fileURLTextBox.Text = model.FileURL;
+            nameOfCompanyComboBox.SelectedValue = model.ClientId;
         }
 
         private void updateButton_Click(object sender, EventArgs e)
@@ -71,14 +73,15 @@ namespace ContractManagement
             string startDate = startDateDateTimePicker.Text;
             string endDate = endDateDateTimePicker.Text;
             string file = fileTextBox.Text;
-			object clientId = nameOfCompanyComboBox.SelectedValue;
+            string fileURL = fileURLTextBox.Text;
+            object clientId = nameOfCompanyComboBox.SelectedValue;
 
             if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
 			{
                 MessageBox.Show("合約始日必須早於合約迄日");
                 return;
             };
-			ContractVM model = new ContractVM
+            ContractVM model = new ContractVM
             {
                 Id = this.id,
                 ContractTitle = contractTitle,
@@ -87,9 +90,10 @@ namespace ContractManagement
                 SignDate = Convert.ToDateTime(signDate),
                 StartDate = Convert.ToDateTime(startDate),
                 EndDate = Convert.ToDateTime(endDate),
-				ClientId = int.Parse(clientId.ToString()),
-				FileName = file
-            };
+                ClientId = int.Parse(clientId.ToString()),
+                FileName = file,
+                FileURL = fileURL,
+        };
 
             Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
             {
@@ -100,7 +104,8 @@ namespace ContractManagement
                 {"StartDate", startDateDateTimePicker},
                 {"EndDate", endDateDateTimePicker},
                 {"Filename", fileTextBox},
-				{"ClientId", nameOfCompanyComboBox},
+                {"FileURL", fileURLTextBox},
+                {"ClientId", nameOfCompanyComboBox},
 			};
 
             bool isValid = ValidationHelper.Validate(model, map, errorProvider1);
@@ -138,6 +143,22 @@ namespace ContractManagement
 			OpenFileDialog file = new OpenFileDialog();
 			file.ShowDialog();
 			this.fileTextBox.Text = file.SafeFileName;
-		}
+            this.fileURLTextBox.Text = file.FileName;
+        }
+
+        private void DownloadButton_Click(object sender, EventArgs e)
+        {
+            WebClient webClient = new WebClient();
+            string fileName = fileTextBox.Text;
+            string fileURl = fileURLTextBox.Text;
+            try
+            {
+                webClient.DownloadFile($"{fileURl}", $@"{fileName}");
+            }
+            catch
+            {
+                MessageBox.Show("請更正檔案名稱及位置");
+            };
+        }
     }
 }

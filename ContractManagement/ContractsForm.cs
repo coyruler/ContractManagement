@@ -27,16 +27,16 @@ namespace ContractManagement
             clientIdComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             var sql = "SELECT * FROM Clients ";
             var dbHelper = new SqlDbHelper("default");
-            List<ClientIndexVM> nameOfCompany = dbHelper.Select(sql, null)
+            List<ClientIndexIndexVM> nameOfCompany = dbHelper.Select(sql, null)
                 .AsEnumerable()
                 .Select(row => ToIndexVM(row))
-                .Prepend(new ClientIndexVM { CLId = 0,NameOfCompany= String.Empty })
+                .Prepend(new ClientIndexIndexVM { CLId = 0,NameOfCompany= String.Empty })
                 .ToList();
             this.clientIdComboBox.DataSource = nameOfCompany;
         }
-        private ClientIndexVM ToIndexVM(DataRow row)
+        private ClientIndexIndexVM ToIndexVM(DataRow row)
         {
-            return new ClientIndexVM
+            return new ClientIndexIndexVM
             {
                 CLId = row.Field<int>("CLId"),
                 NameOfCompany = row.Field<string>("NameOfCompany"),
@@ -50,7 +50,7 @@ INNER JOIN Clients c
 ON ct.ClientId = c.CLId";
 
             SqlParameter[] parameters = new SqlParameter[] { };
-            int ClientId = ((ClientIndexVM)clientIdComboBox.SelectedItem).CLId;
+            int ClientId = ((ClientIndexIndexVM)clientIdComboBox.SelectedItem).CLId;
             if (ClientId > 0)
             {
                 sql += " WHERE ClientId =@ClientId";

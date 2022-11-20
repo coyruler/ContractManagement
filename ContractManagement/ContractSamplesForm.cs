@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace ContractManagement
 {
     public partial class ContractSamplesForm : Form
@@ -25,15 +27,13 @@ namespace ContractManagement
         {
             string sql = @"SELECT * FROM ContractSamples";
 
-            SqlParameter[] parameters = new SqlParameter[] { };
+            SqlParameter[] parameters = new SqlParameter[] {};
 
             var dbHelper = new SqlDbHelper("default");
             contractSamples = dbHelper.Select(sql, parameters)
                 .AsEnumerable()
                 .Select(row => ParseToIndexVM(row))
                 .ToArray();
-
-
             BindData(contractSamples);
         }
         private void BindData(ContractSampleIndexVM[] data)
@@ -45,10 +45,9 @@ namespace ContractManagement
             return new ContractSampleIndexVM
             {
                 Id = row.Field<int>("Id"),
-                FileName = row.Field<string>("FileName")
+                SampleFileName = row.Field<string>("SampleFileName")
             };
         }
-
         private void addNewButton_Click(object sender, EventArgs e)
         {
             var frm = new CreateContractSampleForm();
@@ -58,7 +57,6 @@ namespace ContractManagement
                 DisplayContractSamples();
             }
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndx = e.RowIndex;
