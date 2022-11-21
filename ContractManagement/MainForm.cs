@@ -17,13 +17,6 @@ namespace ContractManagement
             InitializeComponent();
         }
 
-        private void 維護合約ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var frm = new ContractsForm();
-            frm.MdiParent = this;
-            frm.Show();
-        }
-
         private void 維護廠商ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var frm = new ClientsForm();
@@ -62,6 +55,25 @@ namespace ContractManagement
             this.Owner.Show();
         }
 
-       
+        private void 有效合約ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new EfficientContractsForm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void 失效合約ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new InvalidContractsForm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void 維護合約ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var frm = new ContractsForm();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

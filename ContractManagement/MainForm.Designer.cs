@@ -31,10 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.維護合約ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.快速查詢ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.有效合約ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.失效合約ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.維護廠商ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.維護使用者ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.登出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.登出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.維護合約ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,10 +64,35 @@
             // 
             // 維護合約ToolStripMenuItem
             // 
+            this.維護合約ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.維護合約ToolStripMenuItem1,
+            this.快速查詢ToolStripMenuItem});
             this.維護合約ToolStripMenuItem.Name = "維護合約ToolStripMenuItem";
             this.維護合約ToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.維護合約ToolStripMenuItem.Text = "維護合約";
-            this.維護合約ToolStripMenuItem.Click += new System.EventHandler(this.維護合約ToolStripMenuItem_Click);
+            // 
+            // 快速查詢ToolStripMenuItem
+            // 
+            this.快速查詢ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.有效合約ToolStripMenuItem,
+            this.失效合約ToolStripMenuItem});
+            this.快速查詢ToolStripMenuItem.Name = "快速查詢ToolStripMenuItem";
+            this.快速查詢ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.快速查詢ToolStripMenuItem.Text = "快速查詢";
+            // 
+            // 有效合約ToolStripMenuItem
+            // 
+            this.有效合約ToolStripMenuItem.Name = "有效合約ToolStripMenuItem";
+            this.有效合約ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.有效合約ToolStripMenuItem.Text = "有效合約";
+            this.有效合約ToolStripMenuItem.Click += new System.EventHandler(this.有效合約ToolStripMenuItem_Click);
+            // 
+            // 失效合約ToolStripMenuItem
+            // 
+            this.失效合約ToolStripMenuItem.Name = "失效合約ToolStripMenuItem";
+            this.失效合約ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.失效合約ToolStripMenuItem.Text = "失效合約";
+            this.失效合約ToolStripMenuItem.Click += new System.EventHandler(this.失效合約ToolStripMenuItem_Click);
             // 
             // 維護廠商ToolStripMenuItem
             // 
@@ -92,6 +121,13 @@
             this.登出ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
             this.登出ToolStripMenuItem1.Text = "登出";
             this.登出ToolStripMenuItem1.Click += new System.EventHandler(this.登出ToolStripMenuItem_Click);
+            // 
+            // 維護合約ToolStripMenuItem1
+            // 
+            this.維護合約ToolStripMenuItem1.Name = "維護合約ToolStripMenuItem1";
+            this.維護合約ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.維護合約ToolStripMenuItem1.Text = "維護合約";
+            this.維護合約ToolStripMenuItem1.Click += new System.EventHandler(this.維護合約ToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -122,5 +158,9 @@
         private System.Windows.Forms.ToolStripMenuItem 維護使用者ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 登出ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 登出ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 快速查詢ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 有效合約ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 失效合約ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 維護合約ToolStripMenuItem1;
     }
 }
