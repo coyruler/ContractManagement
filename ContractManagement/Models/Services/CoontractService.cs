@@ -120,7 +120,7 @@ VALUES
 
         internal void Delete(int id)
         {
-            string sql = @"DELETE FROM Users WHERE Id=@Id";
+            string sql = @"DELETE FROM Contracts WHERE Id=@Id";
 
             var parameters = new SqlParameterBuilder()
                 .AddInt("Id", id)

@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Xml.Linq;
 using ISpan.Utility;
+using System.IO;
 
 namespace ContractManagement
 {
@@ -53,9 +54,48 @@ namespace ContractManagement
             string signDate = signDateDateTimePicker.Text;
             string startDate = startDateDateTimePicker.Text;
             string endDate = endDateDateTimePicker.Text;
-			string file = fileTextBox.Text;
+			string fileName = fileTextBox.Text;
             string fileURL = fileURLTextBox.Text;
             object clientId = nameOfCompanyComboBox.SelectedValue;
+
+
+			Stream myStream;
+			SaveFileDialog sfd = new SaveFileDialog();
+			sfd.Title = "請選擇上傳路徑";
+			sfd.InitialDirectory = @"C:\範本";
+			sfd.Filter = "所有文件|*.*";
+			sfd.FileName = fileName;
+			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				try
+				{
+					using (FileStream fsRead = new FileStream(fileURL, FileMode.OpenOrCreate, FileAccess.Read))
+					{
+						using (FileStream fsWrite = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.Write))
+						{
+							SaveFileProgressBar.Maximum = (int)fsRead.Length;
+							byte[] buffer = new byte[1024 * 1024 * 3];
+							while (true)
+							{
+								int r = fsRead.Read(buffer, 0, buffer.Length);
+								if (r == 0)
+								{
+									break;
+								}
+								fsWrite.Write(buffer, 0, r);
+								SaveFileProgressBar.Value = (int)fsWrite.Length;
+							}
+							MessageBox.Show("保存成功！");
+						}
+					}
+					fileURL = sfd.FileName.ToString();
+				}
+				catch
+				{
+					MessageBox.Show("請重新確認檔案名稱及位置");
+					return;
+				}
+			}
 
 			if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
 			{
@@ -71,7 +111,7 @@ namespace ContractManagement
                 StartDate = Convert.ToDateTime(startDate),
                 EndDate = Convert.ToDateTime(endDate),
 				ClientId = int.Parse(clientId.ToString()),
-				FileName = file,
+				FileName = fileName,
                 FileURL = fileURL,
             };
             Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)

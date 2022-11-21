@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -72,11 +73,49 @@ namespace ContractManagement
             string signDate = signDateDateTimePicker.Text;
             string startDate = startDateDateTimePicker.Text;
             string endDate = endDateDateTimePicker.Text;
-            string file = fileTextBox.Text;
+            string fileName = fileTextBox.Text;
             string fileURL = fileURLTextBox.Text;
             object clientId = nameOfCompanyComboBox.SelectedValue;
 
-            if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
+			Stream myStream;
+			SaveFileDialog sfd = new SaveFileDialog();
+			sfd.Title = "請選擇上傳路徑";
+			sfd.InitialDirectory = @"C:\範本";
+			sfd.Filter = "所有文件|*.*";
+			sfd.FileName = fileName;
+			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				try
+				{
+					using (FileStream fsRead = new FileStream(fileURL, FileMode.OpenOrCreate, FileAccess.Read))
+					{
+						using (FileStream fsWrite = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.Write))
+						{
+							SaveFileProgressBar.Maximum = (int)fsRead.Length;
+							byte[] buffer = new byte[1024 * 1024 * 3];
+							while (true)
+							{
+								int r = fsRead.Read(buffer, 0, buffer.Length);
+								if (r == 0)
+								{
+									break;
+								}
+								fsWrite.Write(buffer, 0, r);
+								SaveFileProgressBar.Value = (int)fsWrite.Length;
+							}
+							MessageBox.Show("保存成功！");
+						}
+					}
+					fileURL = sfd.FileName.ToString();
+				}
+				catch
+				{
+					MessageBox.Show("請重新確認檔案名稱及位置");
+					return;
+				}
+			}
+
+			if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
 			{
                 MessageBox.Show("合約始日必須早於合約迄日");
                 return;
@@ -91,9 +130,9 @@ namespace ContractManagement
                 StartDate = Convert.ToDateTime(startDate),
                 EndDate = Convert.ToDateTime(endDate),
                 ClientId = int.Parse(clientId.ToString()),
-                FileName = file,
+                FileName = fileName,
                 FileURL = fileURL,
-        };
+            };
 
             Dictionary<string, Control> map = new Dictionary<string, Control>(StringComparer.CurrentCultureIgnoreCase)
             {
@@ -133,7 +172,7 @@ namespace ContractManagement
                 return;
             }
 
-            new UserService().Delete(this.id);
+            new ContractService().Delete(this.id);
 
             this.DialogResult = DialogResult.OK;
         }
@@ -148,17 +187,49 @@ namespace ContractManagement
 
         private void DownloadButton_Click(object sender, EventArgs e)
         {
-            WebClient webClient = new WebClient();
-            string fileName = fileTextBox.Text;
-            string fileURl = fileURLTextBox.Text;
-            try
-            {
-                webClient.DownloadFile($"{fileURl}", $@"{fileName}");
-            }
-            catch
-            {
-                MessageBox.Show("請更正檔案名稱及位置");
-            };
-        }
+			string fileName = fileTextBox.Text;
+			string fileURl = fileURLTextBox.Text;
+			Stream myStream;
+			SaveFileDialog sfd = new SaveFileDialog();
+			sfd.Title = "請選擇路徑";
+			sfd.InitialDirectory = @"C:\Users\ispan\Desktop";
+			sfd.Filter = "所有文件|*.*";
+			sfd.FileName = fileName;
+			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				try
+				{
+					using (FileStream fsRead = new FileStream(fileURl, FileMode.OpenOrCreate, FileAccess.Read))
+					{
+						using (FileStream fsWrite = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.Write))
+						{
+							SaveFileProgressBar.Maximum = (int)fsRead.Length;
+							byte[] buffer = new byte[1024 * 1024 * 3];
+							while (true)
+							{
+								int r = fsRead.Read(buffer, 0, buffer.Length);
+								if (r == 0)
+								{
+									break;
+								}
+								fsWrite.Write(buffer, 0, r);
+								SaveFileProgressBar.Value = (int)fsWrite.Length;
+							}
+							MessageBox.Show("保存成功！");
+						}
+					}
+				}
+				catch
+				{
+					MessageBox.Show("請重新確認檔案名稱及位置");
+					return;
+				}
+			}
+			else
+			{
+				MessageBox.Show("請重新確認檔案名稱及位置");
+			}
+
+		}
     }
 }
