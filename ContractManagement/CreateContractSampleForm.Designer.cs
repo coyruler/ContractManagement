@@ -48,7 +48,7 @@
 			this.fileNameTextBox.Name = "fileNameTextBox";
 			this.fileNameTextBox.ReadOnly = true;
 			this.fileNameTextBox.Size = new System.Drawing.Size(292, 29);
-			this.fileNameTextBox.TabIndex = 8;
+			this.fileNameTextBox.TabIndex = 1;
 			// 
 			// selectFileButton
 			// 
@@ -103,7 +103,7 @@
 			this.fileURLTextBox.Name = "fileURLTextBox";
 			this.fileURLTextBox.ReadOnly = true;
 			this.fileURLTextBox.Size = new System.Drawing.Size(292, 29);
-			this.fileURLTextBox.TabIndex = 13;
+			this.fileURLTextBox.TabIndex = 0;
 			// 
 			// label3
 			// 

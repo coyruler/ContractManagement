@@ -243,7 +243,7 @@
 			this.fileURLTextBox.Name = "fileURLTextBox";
 			this.fileURLTextBox.ReadOnly = true;
 			this.fileURLTextBox.Size = new System.Drawing.Size(280, 29);
-			this.fileURLTextBox.TabIndex = 6;
+			this.fileURLTextBox.TabIndex = 11;
 			// 
 			// label9
 			// 
