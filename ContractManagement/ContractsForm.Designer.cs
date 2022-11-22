@@ -32,15 +32,15 @@
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.searchButton = new System.Windows.Forms.Button();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.contractIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-			this.addNewButton = new System.Windows.Forms.Button();
-			this.clientIdComboBox = new System.Windows.Forms.ComboBox();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.contractTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.startDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.endDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameOfCompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.contractIndexVMBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+			this.addNewButton = new System.Windows.Forms.Button();
+			this.clientIdComboBox = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.contractIndexVMBindingSource1)).BeginInit();
 			this.SuspendLayout();
@@ -85,33 +85,6 @@
 			this.dataGridView1.Size = new System.Drawing.Size(917, 378);
 			this.dataGridView1.TabIndex = 9;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-			// 
-			// contractIndexVMBindingSource1
-			// 
-			this.contractIndexVMBindingSource1.DataSource = typeof(ContractManagement.Models.ViewModels.ContractIndexVM);
-			// 
-			// addNewButton
-			// 
-			this.addNewButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.addNewButton.Location = new System.Drawing.Point(835, 21);
-			this.addNewButton.Name = "addNewButton";
-			this.addNewButton.Size = new System.Drawing.Size(96, 34);
-			this.addNewButton.TabIndex = 2;
-			this.addNewButton.Text = "新增";
-			this.addNewButton.UseVisualStyleBackColor = true;
-			this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
-			// 
-			// clientIdComboBox
-			// 
-			this.clientIdComboBox.DataSource = this.contractIndexVMBindingSource1;
-			this.clientIdComboBox.DisplayMember = "NameOfCompany";
-			this.clientIdComboBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-			this.clientIdComboBox.FormattingEnabled = true;
-			this.clientIdComboBox.Location = new System.Drawing.Point(12, 27);
-			this.clientIdComboBox.Name = "clientIdComboBox";
-			this.clientIdComboBox.Size = new System.Drawing.Size(356, 28);
-			this.clientIdComboBox.TabIndex = 0;
-			this.clientIdComboBox.ValueMember = "Id";
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -159,6 +132,33 @@
 			this.nameOfCompanyDataGridViewTextBoxColumn.Name = "nameOfCompanyDataGridViewTextBoxColumn";
 			this.nameOfCompanyDataGridViewTextBoxColumn.ReadOnly = true;
 			this.nameOfCompanyDataGridViewTextBoxColumn.Width = 300;
+			// 
+			// contractIndexVMBindingSource1
+			// 
+			this.contractIndexVMBindingSource1.DataSource = typeof(ContractManagement.Models.ViewModels.ContractIndexVM);
+			// 
+			// addNewButton
+			// 
+			this.addNewButton.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.addNewButton.Location = new System.Drawing.Point(835, 21);
+			this.addNewButton.Name = "addNewButton";
+			this.addNewButton.Size = new System.Drawing.Size(96, 34);
+			this.addNewButton.TabIndex = 2;
+			this.addNewButton.Text = "新增";
+			this.addNewButton.UseVisualStyleBackColor = true;
+			this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
+			// 
+			// clientIdComboBox
+			// 
+			this.clientIdComboBox.DataSource = this.contractIndexVMBindingSource1;
+			this.clientIdComboBox.DisplayMember = "NameOfCompany";
+			this.clientIdComboBox.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+			this.clientIdComboBox.FormattingEnabled = true;
+			this.clientIdComboBox.Location = new System.Drawing.Point(12, 27);
+			this.clientIdComboBox.Name = "clientIdComboBox";
+			this.clientIdComboBox.Size = new System.Drawing.Size(356, 28);
+			this.clientIdComboBox.TabIndex = 0;
+			this.clientIdComboBox.ValueMember = "Id";
 			// 
 			// ContractsForm
 			// 

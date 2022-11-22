@@ -71,7 +71,6 @@ ON ct.ClientId = c.CLId";
         {
             dataGridView1.DataSource = data;
         }
-
         private ContractIndexVM ParseToIndexVM(DataRow row)
         {
             return new ContractIndexVM
@@ -88,7 +87,6 @@ ON ct.ClientId = c.CLId";
 		{
             DisplayContracts();
         }
-
         private void addNewButton_Click(object sender, EventArgs e)
         {
             var frm = new CreateContractForm();
@@ -98,7 +96,6 @@ ON ct.ClientId = c.CLId";
                 DisplayContracts();
             }
         }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndx = e.RowIndex;
