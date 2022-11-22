@@ -28,7 +28,8 @@ namespace ContractManagement
 FROM Contracts ct
 INNER JOIN Clients c 
 ON ct.ClientId = c.CLId
-where StartDate <= GETDATE()  and GETDATE() <= EndDate";
+where StartDate <= GETDATE()  and GETDATE() <= EndDate
+order by EndDate";
 
             SqlParameter[] parameters = new SqlParameter[] { };
             var dbHelper = new SqlDbHelper("default");

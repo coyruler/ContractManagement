@@ -19,12 +19,15 @@ namespace ContractManagement
 	public partial class EditContractForm : Form
 	{
         private int id;
-        public EditContractForm(int id)
+		string fileInitial;
+		string fileURLInitial;
+		public EditContractForm(int id)
 		{
             InitializeComponent();
 			InitForm();
 			this.Load += EditContractsForm_Load;
             this.id = id;
+
         }
 		public void InitForm()
 		{
@@ -63,7 +66,10 @@ namespace ContractManagement
 			fileTextBox.Text = model.FileName;
             fileURLTextBox.Text = model.FileURL;
             nameOfCompanyComboBox.SelectedValue = model.ClientId;
-        }
+
+			fileInitial = fileTextBox.Text;
+			fileURLInitial = fileURLTextBox.Text;
+		}
 
         private void updateButton_Click(object sender, EventArgs e)
         {
@@ -83,37 +89,41 @@ namespace ContractManagement
 			sfd.InitialDirectory = @"C:\範本";
 			sfd.Filter = "所有文件|*.*";
 			sfd.FileName = fileName;
-			if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			if (fileInitial!= fileName || fileURLInitial != fileURL)
 			{
-				try
+				if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 				{
-					using (FileStream fsRead = new FileStream(fileURL, FileMode.OpenOrCreate, FileAccess.Read))
+					try
 					{
-						using (FileStream fsWrite = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.Write))
+						using (FileStream fsRead = new FileStream(fileURL, FileMode.OpenOrCreate, FileAccess.Read))
 						{
-							SaveFileProgressBar.Maximum = (int)fsRead.Length;
-							byte[] buffer = new byte[1024 * 1024 * 3];
-							while (true)
+							using (FileStream fsWrite = new FileStream(sfd.FileName, FileMode.OpenOrCreate, FileAccess.Write))
 							{
-								int r = fsRead.Read(buffer, 0, buffer.Length);
-								if (r == 0)
+								SaveFileProgressBar.Maximum = (int)fsRead.Length;
+								byte[] buffer = new byte[1024 * 1024 * 3];
+								while (true)
 								{
-									break;
+									int r = fsRead.Read(buffer, 0, buffer.Length);
+									if (r == 0)
+									{
+										break;
+									}
+									fsWrite.Write(buffer, 0, r);
+									SaveFileProgressBar.Value = (int)fsWrite.Length;
 								}
-								fsWrite.Write(buffer, 0, r);
-								SaveFileProgressBar.Value = (int)fsWrite.Length;
+								MessageBox.Show("保存成功！");
 							}
-							MessageBox.Show("保存成功！");
 						}
+						fileURL = sfd.FileName.ToString();
 					}
-					fileURL = sfd.FileName.ToString();
-				}
-				catch
-				{
-					MessageBox.Show("請重新確認檔案名稱及位置");
-					return;
+					catch
+					{
+						MessageBox.Show("請重新確認檔案名稱及位置");
+						return;
+					}
 				}
 			}
+			
 
 			if (Convert.ToDateTime(endDate) < Convert.ToDateTime(startDate))
 			{
