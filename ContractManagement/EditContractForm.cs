@@ -86,7 +86,7 @@ namespace ContractManagement
 			Stream myStream;
 			SaveFileDialog sfd = new SaveFileDialog();
 			sfd.Title = "請選擇上傳路徑";
-			sfd.InitialDirectory = @"C:\範本";
+			sfd.InitialDirectory = @"C:\合約";
 			sfd.Filter = "所有文件|*.*";
 			sfd.FileName = fileName;
 			if (fileInitial!= fileName || fileURLInitial != fileURL)

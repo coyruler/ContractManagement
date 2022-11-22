@@ -31,8 +31,8 @@
 			this.components = new System.ComponentModel.Container();
 			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.clientIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.addNewButton = new System.Windows.Forms.Button();
+			this.clientIndexVMBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.cLIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameOfCompanyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.NameOfRepresentative = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,10 +71,6 @@
 			this.dataGridView1.TabIndex = 4;
 			this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
 			// 
-			// clientIndexVMBindingSource
-			// 
-			this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexIndexVM);
-			// 
 			// addNewButton
 			// 
 			this.addNewButton.Location = new System.Drawing.Point(785, 22);
@@ -84,6 +80,10 @@
 			this.addNewButton.Text = "新增";
 			this.addNewButton.UseVisualStyleBackColor = true;
 			this.addNewButton.Click += new System.EventHandler(this.addNewButton_Click);
+			// 
+			// clientIndexVMBindingSource
+			// 
+			this.clientIndexVMBindingSource.DataSource = typeof(ContractManagement.Models.ViewModels.ClientIndexIndexVM);
 			// 
 			// cLIdDataGridViewTextBoxColumn
 			// 
@@ -145,10 +145,10 @@
 		private System.Windows.Forms.DataGridView dataGridView1;
 		private System.Windows.Forms.Button addNewButton;
 		private System.Windows.Forms.BindingSource clientIndexVMBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cLIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameOfCompanyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NameOfRepresentative;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gUInumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LocationOfCompany;
-    }
+		private System.Windows.Forms.DataGridViewTextBoxColumn cLIdDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn nameOfCompanyDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn NameOfRepresentative;
+		private System.Windows.Forms.DataGridViewTextBoxColumn gUInumberDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn LocationOfCompany;
+	}
 }
